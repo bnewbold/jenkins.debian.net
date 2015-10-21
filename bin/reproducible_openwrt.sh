@@ -29,7 +29,7 @@ save_openwrt_results(){
 		cd $i
 		# save images
 		mkdir -p $TMPDIR/$RUN/$i
-		for j in $(find * -name "*.bin" -o -name "*.squashfs") ; do
+		for j in $(find * -name "*.bin" -o -name "*.squashfs" -o -name "*.img" -o -name "*rootfs.tar.gz" -o -name "*.ubi" -o -iname "*-uImage" -o -iname "*-zImage" -o -name "*-vmlinuz" -o -name "*.dtb" -o -name "*.elf" -o -name "*.img.gz" -o -name "*.ubi") ; do
 			cp -p $j $TMPDIR/$RUN/$i/
 		done
 		# save packages
@@ -222,9 +222,9 @@ for i in * ; do
 	cd $i
 
 	# search images in both paths to find non-existing ones
-	IMGS1=$(find * -type f -name "*.bin" -o -name "*.squashfs" | sort -u )
+	IMGS1=$(find * -type f -name "*.bin" -o -name "*.squashfs" -o -name "*.img" -o -name "*rootfs.tar.gz" -o -name "*.ubi" -o -iname "*-uImage" -o -iname "*-zImage" -o -name "*-vmlinuz" -o -name "*.dtb" -o -name "*.elf" -o -name "*.img.gz" -o -name "*.ubi" | sort -u )
 	pushd $TMPDIR/b2/$i
-	IMGS2=$(find * -type f -name "*.bin" -o -name "*.squashfs" | sort -u )
+	IMGS2=$(find * -type f -name "*.bin" -o -name "*.squashfs" -o -name "*.img" -o -name "*rootfs.tar.gz" -o -name "*.ubi" -o -iname "*-uImage" -o -iname "*-zImage" -o -name "*-vmlinuz" -o -name "*.dtb" -o -name "*.elf" -o -name "*.img.gz" -o -name "*.ubi" | sort -u )
 	popd
 
 	echo "       <table><tr><th>Images for <code>$i</code></th></tr>" >> $DBD_HTML
