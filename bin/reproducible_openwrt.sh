@@ -51,6 +51,8 @@ openwrt_config() {
 	printf "CONFIG_ALL=y\n" >> .config
 	printf "CONFIG_CLEAN_IPKG=y\n" >> .config
 	printf "CONFIG_TARGET_ROOTFS_TARGZ=y\n" >> .config
+	printf "CONFIG_KERNEL_BUILD_USER=reproducible-builds\n" >> .config
+	printf "CONFIG_KERNEL_BUILD_DOMAIN=lists.alioth.debian.org\n" >> .config
 	make defconfig
 }
 
