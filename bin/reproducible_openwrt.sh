@@ -168,6 +168,7 @@ git log -1
 build_two_times ar71xx_generic_ARCHERC7 "CONFIG_TARGET_ar71xx_generic=y\nCONFIG_TARGET_ar71xx_generic_ARCHERC7=y\n"
 build_two_times x86_64 "CONFIG_TARGET_x86=y\nCONFIG_TARGET_x86_64=y\n"
 build_two_times ramips_rt288x_RTN15 "CONFIG_TARGET_ramips=y\nCONFIG_TARGET_ramips_rt288x=y\nCONFIG_TARGET_ramips_rt288x_RTN15=y\n"
+build_two_times sunxi_A20-OLinuXino-Lime "CONFIG_TARGET_sunxi=y\nCONFIG_TARGET_sunxi_A20-OLinuXino-Lime=y\n"
 
 #
 # create html about toolchain used
